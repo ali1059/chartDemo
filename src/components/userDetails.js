@@ -23,31 +23,25 @@ const useStyles = makeStyles((theme) => ({
 const UserDetails = ({ user }) => {
   const classes = useStyles();
   return (
-    <Grid alignItems="center" container>
-      <Grid alignItems="center" item xs={12} sm={6}>
-        <DatePicker label="Date debut" />
-      </Grid>
-      <Grid alignItems="center" item xs={12} sm={6}>
-        <DatePicker label="Date fm" />
-      </Grid>
-      <Grid className="item-center" item xs={12} sm={6}>
+    <Grid justify="center" alignItems="center" container>
+      <Grid
+        style={{ marginTop: "1rem" }}
+        justify="center"
+        alignItems="center"
+        className="item-center"
+        item
+        xs={12}
+        sm={12}
+      >
         <Avatar style={{ margin: "0 0.5rem" }}>R</Avatar> <p> {user}</p>
       </Grid>
-      <Grid item xs={12} sm={3}>
-        <DatePicker label="De" />
-      </Grid>
-      <Grid item xs={12} sm={3}>
-        <DatePicker label="a" />
-      </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid justify="center" alignItems="center" item xs={12} sm={6}>
         <DatePicker label="Date debut" />
       </Grid>
-      <Grid item xs={12} sm={4}>
+      <Grid justify="center" alignItems="center" item xs={12} sm={6}>
         <DatePicker label="Date fm" />
       </Grid>
-      <Grid className="item-center" item xs={12} sm={3}>
-        <Button variant="contained">Exporter</Button>
-      </Grid>
+
       <Grid item xs={12} sm={12}>
         <div
           style={{

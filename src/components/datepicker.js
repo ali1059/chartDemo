@@ -19,7 +19,7 @@ const DatePicker = ({ label }) => {
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid style={{ width: "13rem" }} container justify="space-around">
+      <Grid container justify="space-around">
         <KeyboardDatePicker
           margin="normal"
           id="date-picker-dialog"
