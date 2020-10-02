@@ -42,7 +42,7 @@ export default class TimelineView extends SampleBase {
             <ScheduleComponent
               height="500px"
               ref={(schedule) => (this.scheduleObj = schedule)}
-              selectedDate={new Date(2020, 9, 2)}
+              selectedDate={new Date(2019, 0, 10)}
               eventSettings={{ dataSource: this.data }}
             >
               <ViewsDirective>
