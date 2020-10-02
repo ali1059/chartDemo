@@ -24,7 +24,7 @@ const UserDetails = ({ user }) => {
   const classes = useStyles();
   return (
     <Grid justify="center" alignItems="center" container>
-      <Grid
+      {/* <Grid
         style={{ marginTop: "1rem" }}
         justify="center"
         alignItems="center"
@@ -34,7 +34,7 @@ const UserDetails = ({ user }) => {
         sm={12}
       >
         <Avatar style={{ margin: "0 0.5rem" }}>R</Avatar> <p> {user}</p>
-      </Grid>
+      </Grid> */}
       <Grid justify="center" alignItems="center" item xs={12} sm={6}>
         <DatePicker label="Date debut" />
       </Grid>

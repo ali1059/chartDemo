@@ -25,7 +25,6 @@ const options = {
 const Chart = () => {
   const [state, setState] = useState();
   const alarm_bar = {};
-
   useEffect(() => {
     console.log(":In useeffect dataset = ", Dataset);
     alarm_bar["chart"] = visavail.generate(options, Dataset);
@@ -34,11 +33,16 @@ const Chart = () => {
 
   return (
     <div
+      onClick={() => console.log("1 clicked")}
       style={{ width: "100%", overflow: "hidden", marginTop: "1rem" }}
       className="visavail"
       id="alarm_bar_container"
     >
-      <p id="alarm_bar_div" style={{ overflow: "hidden" }} />
+      <p
+        onClick={() => console.log("2 clicked")}
+        id="alarm_bar_div"
+        style={{ overflow: "hidden" }}
+      />
     </div>
   );
 };

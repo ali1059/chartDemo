@@ -59,7 +59,7 @@ const Sidebar = () => {
           {SidebarData.map((item, index) => (
             <li key={index} className={item.cName} onClick={handleClick}>
               <Link to={item.path}>
-                {item.icon} <span>{item.title} </span>
+                {item.icon} <span className="title">{item.title} </span>
               </Link>
             </li>
           ))}

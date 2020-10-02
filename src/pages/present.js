@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import DataList from "../components/list";
 import { DepartmentData, Users } from "../components/data";
 import * as FaIcons from "react-icons/fa";
-
+import TimelineView from "../components/timelinescheduler/timelineview";
 import UserDetails from "../components/userDetails";
 import Grid from "@material-ui/core/Grid";
+import Avatar from "@material-ui/core/Avatar";
+import Switch from "@material-ui/core/Switch";
 
 const PresentPage = () => {
   const [showUserDetails, setShowUserDetails] = useState(false);
+  const [showScheduler, setShowScheduler] = useState(false);
   const [user, setUser] = useState();
   const [state, setState] = useState({
     title: "Departments",
@@ -29,6 +32,10 @@ const PresentPage = () => {
       icon: <FaIcons.FaUserAlt />,
     });
 
+  const handleSwitch = () => {
+    setShowScheduler(!showScheduler);
+  };
+
   return (
     <Grid container>
       <Grid item xs={12} sm={5}>
@@ -41,12 +48,47 @@ const PresentPage = () => {
             setShowUserDetails={setShowUserDetails}
             setUser={setUser}
             handleShowDepartments={handleShowDepartments}
+            setShowScheduler={setShowScheduler}
           />
         </div>
       </Grid>
-      <Grid item xs={12} sm={7}>
-        {showUserDetails && <UserDetails user={user} />}
-      </Grid>
+      {console.log("here =", showUserDetails, showScheduler)}
+      {(showScheduler || showUserDetails) && (
+        <Grid
+          justify="center"
+          style={{ padding: "0.2rem 1rem" }}
+          item
+          xs={12}
+          sm={7}
+        >
+          <Grid
+            style={{ marginBottom: "0.2rem" }}
+            justify="space-around"
+            alignItems="center"
+            className="item-center"
+            item
+            xs={12}
+            sm={12}
+          >
+            <div>
+              <Switch
+                checked={showScheduler}
+                onChange={handleSwitch}
+                name="scheduler"
+                color="primary"
+                inputProps={{ "aria-label": "primary checkbox" }}
+              />
+
+              <small>Scheduler</small>
+            </div>
+            <div>
+              <Avatar style={{ margin: "0 0.5rem" }}>R</Avatar> <p> {user}</p>
+            </div>
+          </Grid>
+          {showUserDetails && !showScheduler && <UserDetails user={user} />}
+          {showScheduler && <TimelineView user={user} />}
+        </Grid>
+      )}
     </Grid>
   );
 };

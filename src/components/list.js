@@ -26,6 +26,7 @@ const DataList = ({
   setShowUserDetails,
   setUser,
   handleShowDepartments,
+  setShowScheduler,
 }) => {
   console.log("DATA = ", data);
   console.log("TITLE = ", title);
@@ -43,6 +44,7 @@ const DataList = ({
 
   const handleBack = () => {
     setShowUserDetails(false);
+    setShowScheduler(false);
     handleShowDepartments();
   };
 
