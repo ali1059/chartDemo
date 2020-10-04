@@ -1468,6 +1468,14 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@neuronet.io/vido@^3.2.0":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@neuronet.io/vido/-/vido-3.2.6.tgz#e37224d1b47475382e138f0c9b0cd5ed1a134c04"
+  integrity sha512-gOOgbMumPx+2ws5X8hdUomj55uE5Gz2HSb7OfmeExFXu7/cEPpHgZ0PIuDMo5qjovFE/rQBO9P/aPlWnct9QHA==
+  dependencies:
+    csstype "^2.6.10"
+    lit-html-optimised "^1.3.0"
+
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
@@ -2953,6 +2961,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.1.tgz#e1e82e4f3e999e2cfd61b161280d16a111f86428"
   integrity sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
 
+axios@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.20.0.tgz#057ba30f04884694993a8cd07fa394cff11c50bd"
+  integrity sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+  dependencies:
+    follow-redirects "^1.10.0"
+
 axobject-query@^2.0.2:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
@@ -4263,12 +4278,12 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.5.2:
+csstype@^2.5.2, csstype@^2.6.10:
   version "2.6.13"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.13.tgz#a6893015b90e84dd6e85d0e3b442a1e84f2dbe0f"
   integrity sha512-ul26pfSQTZW8dcOnD2iiJssfXw0gdNVX9IJDH/X3K5DGPfj+fUYe3kB+swUY6BF3oZDxaID3AJt+9/ojSAE05A==
 
-csstype@^3.0.2:
+csstype@^3.0.2, csstype@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.3.tgz#2b410bbeba38ba9633353aff34b05d9755d065f8"
   integrity sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
@@ -4800,6 +4815,11 @@ date-fns@latest:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
   integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
+dayjs@^1.8.35:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.1.tgz#201a755f7db5103ed6de63ba93a984141c754541"
+  integrity sha512-01NCTBg8cuMJG1OQc6PR7T66+AFYiPwgDvdJmvJBn29NGzIG+DIFxPLNjHzwz3cpFIvG+NcwIjP9hSaPVoOaDg==
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -4847,6 +4867,11 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
+
+deep-state-observer@^3.20.1:
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/deep-state-observer/-/deep-state-observer-3.22.0.tgz#cbc028e92f811d67a7cdca403afb550864cb736c"
+  integrity sha512-NnVt9X49f5W3XBcYqyYk+sXZ21iLG+ozwllEvDIoyj6TIWPKzFoeW2zLQMfumuEevAPtdOBKDk3g5BzWrC1sjQ==
 
 default-gateway@^4.2.0:
   version "4.2.0"
@@ -5915,7 +5940,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
@@ -6066,6 +6091,16 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+
+gantt-schedule-timeline-calendar@^3.2.10:
+  version "3.2.10"
+  resolved "https://registry.yarnpkg.com/gantt-schedule-timeline-calendar/-/gantt-schedule-timeline-calendar-3.2.10.tgz#9b23bd633a4c5509f374f4f96584e67992c658a1"
+  integrity sha512-ePaQQnR2XF5djxISFTITIsOj5hifK3S8w3rUUxtOeFQL0S1QViMO3WQ/eoO4gUKm17/8kD+Kf1BSt9za+EVP9Q==
+  dependencies:
+    "@neuronet.io/vido" "^3.2.0"
+    csstype "^3.0.3"
+    dayjs "^1.8.35"
+    deep-state-observer "^3.20.1"
 
 gensync@^1.0.0-beta.1:
   version "1.0.0-beta.1"
@@ -7847,6 +7882,11 @@ lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
+
+lit-html-optimised@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/lit-html-optimised/-/lit-html-optimised-1.3.0.tgz#8cf89d0a655b529cd23fa49b231f7297e681faf6"
+  integrity sha512-wP6JWmnk5VvjliLP1dGKYe9Ip0zKfJHnvjgkVQluxi+zqNZ+LQPEsRMsRaYjhYIefVvZx9mMbFoIx2/KSMRoUQ==
 
 load-json-file@^2.0.0:
   version "2.0.0"
@@ -10049,6 +10089,14 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-i
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-loader-spinner@^3.1.14:
+  version "3.1.14"
+  resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-3.1.14.tgz#2a201f07379c492766175609903c0f2ced57c720"
+  integrity sha512-7V+upnW+RVA/O94LIB/EQLK2uaz/TpZBHG5uNXlOXgvxvALxlxVYeEDmus5Oex2C58fiwrsRvSyu/4VRmLbZ9Q==
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.7.2"
 
 react-router-dom@^5.2.0:
   version "5.2.0"

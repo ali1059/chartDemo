@@ -1,6 +1,16 @@
+import img1 from "../assets/1.jpg";
+import img2 from "../assets/2.jpg";
+import img3 from "../assets/31.jpeg";
+import img4 from "../assets/34.jpg";
+
 const DepartmentData = ["MU-PHX-SFRC FTT N1", "MU-PHX-SFRC FTT N2"];
 
-const Users = ["[R01851]", "[R01935]", "[R01894]", "James Bruno Andre[R01852]"];
+const Users = [
+  { name: "James [R01851]", img: img1 },
+  { name: "Tanya [R01935]", img: img3 },
+  { name: "Smith [R01894]", img: img2 },
+  { name: "Zoe [R01852]", img: img4 },
+];
 
 const Dataset = [
   {

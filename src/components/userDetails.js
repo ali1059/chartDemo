@@ -7,6 +7,9 @@ import "./userdetails.css";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Chart from "./chart";
+import Grow from "@material-ui/core/Grow";
+import Fade from "@material-ui/core/Fade";
+
 import Box from "./box";
 
 const useStyles = makeStyles((theme) => ({
@@ -43,20 +46,23 @@ const UserDetails = ({ user }) => {
       </Grid>
 
       <Grid item xs={12} sm={12}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Box label="Action" color="#91d18b" />
-          <Box label="Pause" color="#0278ae" />
-          <Box label="Repas" color="#a6a6a4" />
-          <Box label="Inco(+)" color="#b83b5e" />
-          <Box label="Inco(-)" color="#6a2c70" />
-          <Box label="En Service" color="#5cb85c" />
-        </div>
+        <Fade in={true} {...{ timeout: 1000 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box label="Action" color="#91d18b" />
+            <Box label="Pause" color="#0278ae" />
+            <Box label="Repas" color="#a6a6a4" />
+            <Box label="Inco(+)" color="#b83b5e" />
+            <Box label="Inco(-)" color="#6a2c70" />
+            <Box label="En Service" color="#5cb85c" />
+          </div>
+        </Fade>
+
         <Chart />
       </Grid>
     </Grid>

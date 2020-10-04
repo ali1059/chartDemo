@@ -16,6 +16,7 @@ import { extend } from "@syncfusion/ej2-base";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 import { SampleBase } from "./sample-base";
 import { PropertyPane } from "./property-pane";
+import Grow from "@material-ui/core/Grow";
 import * as dataSource from "./datasource.json";
 /**
  * Schedule timeline sample
@@ -30,6 +31,19 @@ export default class TimelineView extends SampleBase {
       true
     );
   }
+
+  onEventRendered(args) {
+    let categoryColor = args.data.CategoryColor;
+    if (!args.element || !categoryColor) {
+      return;
+    }
+    if (this.scheduleObj.currentView === "Agenda") {
+      args.element.firstChild.style.borderLeftColor = categoryColor;
+    } else {
+      args.element.style.backgroundColor = categoryColor;
+    }
+  }
+
   change(args) {
     this.scheduleObj.selectedDate = args.value;
     this.scheduleObj.dataBind();
@@ -37,34 +51,36 @@ export default class TimelineView extends SampleBase {
   render() {
     return (
       <div className="schedule-control-section">
-        <div className="col-lg-9 control-section">
-          <div className="control-wrapper">
-            <ScheduleComponent
-              height="500px"
-              ref={(schedule) => (this.scheduleObj = schedule)}
-              selectedDate={new Date(2019, 0, 10)}
-              eventSettings={{ dataSource: this.data }}
-            >
-              <ViewsDirective>
-                <ViewDirective option="TimelineDay" />
-                <ViewDirective option="TimelineWeek" />
+        <Grow in={true} {...{ timeout: 1200 }}>
+          <div className="col-lg-9 control-section">
+            <div className="control-wrapper">
+              <ScheduleComponent
+                height="500px"
+                ref={(schedule) => (this.scheduleObj = schedule)}
+                selectedDate={new Date(2019, 0, 10)}
+                eventSettings={{ dataSource: this.data }}
+                eventRendered={this.onEventRendered.bind(this)}
+              >
+                <ViewsDirective>
+                  <ViewDirective option="TimelineDay" />
+                  {/* <ViewDirective option="TimelineWeek" />
                 <ViewDirective option="TimelineWorkWeek" />
                 <ViewDirective option="TimelineMonth" />
-                <ViewDirective option="Agenda" />
-              </ViewsDirective>
-              <Inject
-                services={[
-                  TimelineViews,
-                  TimelineMonth,
-                  Agenda,
-                  Resize,
-                  DragAndDrop,
-                ]}
-              />
-            </ScheduleComponent>
+                <ViewDirective option="Agenda" /> */}
+                </ViewsDirective>
+                <Inject
+                  services={[
+                    TimelineViews,
+                    TimelineMonth,
+                    Agenda,
+                    Resize,
+                    DragAndDrop,
+                  ]}
+                />
+              </ScheduleComponent>
+            </div>
           </div>
-        </div>
-        {/* <div className="col-lg-3 property-section">
+          {/* <div className="col-lg-3 property-section">
           <PropertyPane title="Properties">
             <table
               id="property"
@@ -93,6 +109,7 @@ export default class TimelineView extends SampleBase {
             </table>
           </PropertyPane>
         </div> */}
+        </Grow>
       </div>
     );
   }

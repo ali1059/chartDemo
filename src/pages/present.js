@@ -7,11 +7,15 @@ import UserDetails from "../components/userDetails";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 import Switch from "@material-ui/core/Switch";
+import PuffLoader from "../components/puffloader";
+import Grow from "@material-ui/core/Grow";
+import Fade from "@material-ui/core/Fade";
 
 const PresentPage = () => {
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showScheduler, setShowScheduler] = useState(false);
   const [user, setUser] = useState();
+  const [showLoader, setShowLoader] = useState(false);
   const [state, setState] = useState({
     title: "Departments",
     data: DepartmentData,
@@ -34,63 +38,74 @@ const PresentPage = () => {
 
   const handleSwitch = () => {
     setShowScheduler(!showScheduler);
+    setShowLoader(true);
   };
 
-  return (
-    <Grid container>
-      <Grid item xs={12} sm={5}>
-        <div style={{ marginLeft: "215px" }}>
-          <DataList
-            title={state.title}
-            data={state.data}
-            icon={state.icon}
-            handleShowUsers={handleShowUsers}
-            setShowUserDetails={setShowUserDetails}
-            setUser={setUser}
-            handleShowDepartments={handleShowDepartments}
-            setShowScheduler={setShowScheduler}
-          />
-        </div>
-      </Grid>
-      {console.log("here =", showUserDetails, showScheduler)}
-      {(showScheduler || showUserDetails) && (
-        <Grid
-          justify="center"
-          style={{ padding: "0.2rem 1rem" }}
-          item
-          xs={12}
-          sm={7}
-        >
+  console.log("USER  = ", user);
+
+  if (showLoader) {
+    return <PuffLoader setShowLoader={setShowLoader} />;
+  } else
+    return (
+      <Grid container>
+        <Grid item xs={12} sm={5}>
+          <div style={{ marginLeft: "215px" }}>
+            <DataList
+              setShowLoader={setShowLoader}
+              title={state.title}
+              data={state.data}
+              icon={state.icon}
+              handleShowUsers={handleShowUsers}
+              setShowUserDetails={setShowUserDetails}
+              setUser={setUser}
+              handleShowDepartments={handleShowDepartments}
+              setShowScheduler={setShowScheduler}
+            />
+          </div>
+        </Grid>
+
+        {(showScheduler || showUserDetails) && (
           <Grid
-            style={{ marginBottom: "0.2rem" }}
-            justify="space-around"
-            alignItems="center"
-            className="item-center"
+            justify="center"
+            style={{ padding: "0.2rem 1rem" }}
             item
             xs={12}
-            sm={12}
+            sm={7}
           >
-            <div>
-              <Switch
-                checked={showScheduler}
-                onChange={handleSwitch}
-                name="scheduler"
-                color="primary"
-                inputProps={{ "aria-label": "primary checkbox" }}
-              />
+            <Grid
+              style={{ marginBottom: "0.2rem" }}
+              justify="space-around"
+              alignItems="center"
+              className="item-center"
+              item
+              xs={12}
+              sm={12}
+            >
+              <div>
+                <Switch
+                  checked={showScheduler}
+                  onChange={handleSwitch}
+                  name="scheduler"
+                  color="primary"
+                  inputProps={{ "aria-label": "primary checkbox" }}
+                />
 
-              <small>Scheduler</small>
-            </div>
-            <div>
-              <Avatar style={{ margin: "0 0.5rem" }}>R</Avatar> <p> {user}</p>
-            </div>
+                <small>Scheduler</small>
+              </div>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Avatar src={user.img} style={{ margin: "0 0.5rem" }}></Avatar>
+                <p> {user.name}</p>
+              </div>
+            </Grid>
+
+            {showUserDetails && !showScheduler && <UserDetails user={user} />}
+
+            {showScheduler && <TimelineView user={user} />}
           </Grid>
-          {showUserDetails && !showScheduler && <UserDetails user={user} />}
-          {showScheduler && <TimelineView user={user} />}
-        </Grid>
-      )}
-    </Grid>
-  );
+        )}
+        {console.log("showLoader = ", showLoader)}
+      </Grid>
+    );
 };
 
 export default PresentPage;

@@ -6,7 +6,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import * as MdIcons from "react-icons/md";
-
+import Avatar from "@material-ui/core/Avatar";
+import Grow from "@material-ui/core/Grow";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -27,6 +28,7 @@ const DataList = ({
   setUser,
   handleShowDepartments,
   setShowScheduler,
+  setShowLoader,
 }) => {
   console.log("DATA = ", data);
   console.log("TITLE = ", title);
@@ -34,11 +36,14 @@ const DataList = ({
   const [open, setOpen] = React.useState(true);
 
   const handleClick = (e) => {
-    console.log(e.target, e.target.textContent);
     console.log("Clicked title=", title);
     title === "Departments" && handleShowUsers();
     title === "Users" && setShowUserDetails(true);
-    title === "Users" && setUser(e.target.textContent);
+    title === "Users" && setShowLoader(true);
+    const selectedUser = data.filter(
+      (item) => item.name == e.target.textContent
+    );
+    title === "Users" && setUser(selectedUser[0]);
     setOpen(!open);
   };
 
@@ -47,6 +52,8 @@ const DataList = ({
     setShowScheduler(false);
     handleShowDepartments();
   };
+
+  console.log("TILTE = ", title);
 
   return (
     <List
@@ -70,10 +77,23 @@ const DataList = ({
       className={classes.root}
     >
       {data.map((item, index) => (
-        <ListItem key={index} button onClick={handleClick}>
-          <ListItemIcon>{icon}</ListItemIcon>
-          <ListItemText primary={item} />
-        </ListItem>
+        <Grow in={true} {...{ timeout: 1000 }}>
+          <ListItem key={index} button onClick={handleClick}>
+            <ListItemIcon>{icon}</ListItemIcon>
+            {title == "Users" && (
+              <Avatar
+                style={{ marginRight: "1rem", pointerEvents: "none" }}
+                alt={item.name}
+                src={item.img}
+              />
+            )}
+            {title == "Users" ? (
+              <ListItemText primary={item.name} />
+            ) : (
+              <ListItemText primary={item} />
+            )}
+          </ListItem>
+        </Grow>
       ))}
     </List>
   );

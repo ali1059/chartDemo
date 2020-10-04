@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as visavail from "visavail";
 import { Dataset } from "../components/data";
 import "./visavail.css";
+import Fade from "@material-ui/core/Fade";
 
 const options = {
   id_div_container: "alarm_bar_container",
@@ -32,18 +33,20 @@ const Chart = () => {
   }, []);
 
   return (
-    <div
-      onClick={() => console.log("1 clicked")}
-      style={{ width: "100%", overflow: "hidden", marginTop: "1rem" }}
-      className="visavail"
-      id="alarm_bar_container"
-    >
-      <p
-        onClick={() => console.log("2 clicked")}
-        id="alarm_bar_div"
-        style={{ overflow: "hidden" }}
-      />
-    </div>
+    <Fade in={true} {...{ timeout: 1500 }}>
+      <div
+        onClick={() => console.log("1 clicked")}
+        style={{ width: "100%", overflow: "hidden", marginTop: "1rem" }}
+        className="visavail"
+        id="alarm_bar_container"
+      >
+        <p
+          onClick={() => console.log("2 clicked")}
+          id="alarm_bar_div"
+          style={{ overflow: "hidden" }}
+        />
+      </div>
+    </Fade>
   );
 };
 
