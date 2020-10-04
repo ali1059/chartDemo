@@ -79,7 +79,9 @@ const DataList = ({
       {data.map((item, index) => (
         <Grow in={true} {...{ timeout: 1000 }}>
           <ListItem key={index} button onClick={handleClick}>
-            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemIcon style={{ pointerEvents: "none" }}>
+              {icon}
+            </ListItemIcon>
             {title == "Users" && (
               <Avatar
                 style={{ marginRight: "1rem", pointerEvents: "none" }}
