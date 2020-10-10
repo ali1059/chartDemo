@@ -100,7 +100,7 @@ const PresentPage = () => {
 
             {showUserDetails && !showScheduler && <UserDetails user={user} />}
 
-            {showScheduler && <TimelineView user={user} />}
+            {showScheduler && <TimelineView user={user}  />}
           </Grid>
         )}
         {console.log("showLoader = ", showLoader)}

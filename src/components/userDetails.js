@@ -6,6 +6,7 @@ import DatePicker from "../components/datepicker";
 import "./userdetails.css";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import Chart from "./chart";
 import Grow from "@material-ui/core/Grow";
 import Fade from "@material-ui/core/Fade";
@@ -38,12 +39,22 @@ const UserDetails = ({ user }) => {
       >
         <Avatar style={{ margin: "0 0.5rem" }}>R</Avatar> <p> {user}</p>
       </Grid> */}
-      <Grid justify="center" alignItems="center" item xs={12} sm={6}>
+      <Grid justify="center" alignItems="center" item xs={12} sm={5}>
         <DatePicker label="Date debut" />
       </Grid>
-      <Grid justify="center" alignItems="center" item xs={12} sm={6}>
+      <Grid justify="center" alignItems="center" item xs={12} sm={5}>
         <DatePicker label="Date fm" />
       </Grid>
+      <Grid justify="center" alignItems="center" item xs={12} sm={2}>
+      <Button
+        variant="contained"
+        color="default"
+        className={classes.button}
+        startIcon={<CloudUploadIcon />}
+      >
+        Export
+      </Button> 
+</Grid>
 
       <Grid item xs={12} sm={12}>
         <Fade in={true} {...{ timeout: 1000 }}>

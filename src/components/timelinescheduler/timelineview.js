@@ -1,6 +1,8 @@
 import * as React from "react";
 import {
   ScheduleComponent,
+  ResourceDirective,
+  ResourcesDirective,
   ViewsDirective,
   ViewDirective,
   Agenda,
@@ -24,12 +26,16 @@ import * as dataSource from "./datasource.json";
 export default class TimelineView extends SampleBase {
   constructor() {
     super(...arguments);
-    this.data = extend(
-      [],
-      dataSource.scheduleData.concat(dataSource.timelineData),
-      null,
-      true
-    );
+    this.data = extend([], dataSource, null, true);
+    this.roomData = [
+      { RoomText: 'Schedule', Id: 1, RoomColor: '#cb6bb2' },
+      { RoomText: 'ROOM 2', Id: 2, RoomColor: '#56ca85' }
+  ];
+  this.ownerData = [
+      { OwnerText: 'Prev', Id: 1, GroupId: 1, OwnerColor: '#ffaa00' },
+      { OwnerText: 'relise', Id: 2, GroupId: 1, OwnerColor: '#f8a398' },
+      { OwnerText: 'Valid', Id: 3, GroupId: 1, OwnerColor: '#7499e1' }
+  ];
   }
 
   onEventRendered(args) {
@@ -50,16 +56,17 @@ export default class TimelineView extends SampleBase {
   }
   render() {
     return (
-      <div className="schedule-control-section">
+      <div className="schedule-control-section" style={{marginTop:"2.5rem"}}>
         <Grow in={true} {...{ timeout: 1200 }}>
           <div className="col-lg-9 control-section">
             <div className="control-wrapper">
               <ScheduleComponent
-                height="500px"
+                height="400px"
                 ref={(schedule) => (this.scheduleObj = schedule)}
                 selectedDate={new Date(2019, 0, 10)}
-                eventSettings={{ dataSource: this.data }}
                 eventRendered={this.onEventRendered.bind(this)}
+                eventSettings={{ dataSource: this.data.default.scheduleData }}
+                group={{ resources: ['Rooms', 'Owners'] }}
               >
                 <ViewsDirective>
                   <ViewDirective option="TimelineDay" />
@@ -68,6 +75,12 @@ export default class TimelineView extends SampleBase {
                 <ViewDirective option="TimelineMonth" />
                 <ViewDirective option="Agenda" /> */}
                 </ViewsDirective>
+                <ResourcesDirective>
+                <ResourceDirective field='RoomId' title='Room' name='Rooms' dataSource={this.roomData} textField='RoomText' idField='Id' colorField='RoomColor'>
+                </ResourceDirective>
+                <ResourceDirective field='OwnerId' title='Owner' name='Owners' allowMultiple={true} dataSource={this.ownerData} textField='OwnerText' idField='Id' groupIDField='GroupId' colorField='OwnerColor'>
+                </ResourceDirective>
+            </ResourcesDirective>
                 <Inject
                   services={[
                     TimelineViews,

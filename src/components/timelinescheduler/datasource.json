@@ -6,7 +6,11 @@
       "Location": "Space Centre USA",
       "StartTime": "2019-01-06T04:00:00.000Z",
       "EndTime": "2019-01-06T05:30:00.000Z",
-      "CategoryColor": "#1aaa55"
+      "CategoryColor": "#1aaa55",
+      "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":1
+
     },
     {
       "Id": 2,
@@ -14,7 +18,9 @@
       "Location": "Newyork City",
       "StartTime": "2019-01-07T06:30:00.000Z",
       "EndTime": "2019-01-07T08:30:00.000Z",
-      "CategoryColor": "#357cd2"
+      "CategoryColor": "#357cd2",
+      "RoomId":1,
+      "OwnerId":1
     },
     {
       "Id": 3,
@@ -22,7 +28,9 @@
       "Location": "Space Centre USA",
       "StartTime": "2019-01-08T04:00:00.000Z",
       "EndTime": "2019-01-08T05:30:00.000Z",
-      "CategoryColor": "#7fa900"
+      "CategoryColor": "#7fa900",
+      "RoomId":1,
+      "OwnerId":1
     },
     {
       "Id": 4,
@@ -30,7 +38,9 @@
       "Location": "Space Centre USA",
       "StartTime": "2019-01-09T07:30:00.000Z",
       "EndTime": "2019-01-09T09:00:00.000Z",
-      "CategoryColor": "#ea7a57"
+      "CategoryColor": "#ea7a57",
+      "RoomId":1,
+      "OwnerId":1
     },
     {
       "Id": 5,
@@ -38,7 +48,10 @@
       "Location": "Space Centre USA",
       "StartTime": "2019-01-10T06:30:00.000Z",
       "EndTime": "2019-01-10T08:30:00.000Z",
-      "CategoryColor": "#00bdae"
+      "CategoryColor": "#00bdae",
+      "RoomId":1,
+      "OwnerId":1,
+      "IsReadonly":true
     },
     {
       "Id": 6,
@@ -46,7 +59,8 @@
       "Location": "Bermuda",
       "StartTime": "2019-01-10T04:00:00.000Z",
       "EndTime": "2019-01-10T05:30:00.000Z",
-      "CategoryColor": "#f57f17"
+      "CategoryColor": "#f57f17","RoomId":1,
+      "OwnerId":1,"IsReadonly":true
     },
     {
       "Id": 7,
@@ -147,25 +161,132 @@
     {
       "Id": 19,
       "Subject": "Lifecycle of Bumblebee",
-      "Location": "San Fransisco",
+      "Location": "San Fransis",
       "StartTime": "2019-01-10T00:30:00.000Z",
       "EndTime": "2019-01-10T02:00:00.000Z",
-      "CategoryColor": "#7fa900"
+      "CategoryColor": "#7fa900",
+      "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":1
     },
+    {
+      "Id": 20,
+      "Subject": "Lifecycle of Bumblebee1",
+      "Location": "San Fransisco",
+      "StartTime": "2019-01-10T04:30:10.000Z",
+      "EndTime": "2019-01-10T02:06:10.100Z",
+      "CategoryColor": "#7fa900",
+      "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":1
+    },
+    {
+      "Id": 21,
+      "Subject": "Lifecycle of Bumblebee2",
+      "Location": "San Fransisco",
+      "StartTime": "2019-01-10T07:30:00.000Z",
+      "EndTime": "2019-01-10T08:00:00.000Z",
+      "CategoryColor": "#7fa900",
+      "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":1
+    },
+    {
+      "Id": 22,
+      "Subject": "Lifecycle of Bumblebee3",
+      "Location": "San Fransisco",
+      "StartTime": "2019-01-10T10:30:00.000Z",
+      "EndTime": "2019-01-10T00:00:00.000Z",
+      "CategoryColor": "#7fa900",
+      "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":1
+    },
+    {
+      "Id": 23,
+      "Subject": "Lifecycle of Bumblebee4",
+      "Location": "San Fransisco",
+      "StartTime": "2019-01-10T03:30:00.000Z",
+      "EndTime": "2019-01-10T07:00:00.000Z",
+      "CategoryColor": "#7fa900",
+      "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":1
+    },
+    {
+      "Id": 20,
+      "Subject": "Testing in progress",
+      "Location": "Centre US",
+      "StartTime": "2019-01-10T03:30:00.000Z",
+      "EndTime": "2019-01-10T05:00:00.000Z",
+      "CategoryColor": "#7fa900", 
+      "RoomId":1,
+      "OwnerId":3
+    },
+    {
+      "Id": 210,
+      "Subject": "Testing in progress1",
+      "Location": " US",
+      "StartTime": "2019-01-10T05:30:00.000Z",
+      "EndTime": "2019-01-10T09:00:30.000Z",
+      "CategoryColor": "blue", 
+      "RoomId":1,
+      "OwnerId":3
+    },
+
+
+
+
+
+
+
+
     {
       "Id": 20,
       "Subject": "Alien Civilization",
       "Location": "Space Centre USA",
+      "StartTime": "2019-01-10T03:30:00.000Z",
+      "EndTime": "2019-01-10T05:00:00.000Z",
+      "CategoryColor": "#ea7a57", "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":2
+    },
+    {
+      "Id": 201,
+      "Subject": "Alien Civilizationsssssssssss",
+      "Location": "Space sdsd Centre USA",
+      "StartTime": "2019-01-10T06:30:00.000Z",
+      "EndTime": "2019-01-10T09:30:00.000Z",
+      "CategoryColor": "#ea7a57", "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":2
+    },
+    {
+      "Id": 20,
+      "Subject": "Alien Civilization2",
+      "Location": "Space Centre USA",
       "StartTime": "2019-01-10T10:30:00.000Z",
-      "EndTime": "2019-01-10T12:30:00.000Z",
-      "CategoryColor": "#ea7a57"
+      "EndTime": "2019-01-10T11:00:00.000Z",
+      "CategoryColor": "yellow", "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":2
+    },
+    {
+      "Id": 20,
+      "Subject": "Alien Civilization444",
+      "Location": "Space Centre USA",
+      "StartTime": "2019-01-10T13:30:20.000Z",
+      "EndTime": "2019-01-10T015:20:00.000Z",
+      "CategoryColor": "green", "IsReadonly": true,
+      "RoomId":1,
+      "OwnerId":2
     },
     {
       "Id": 21,
-      "Subject": "Alien Civilization",
+      "Subject": "Alien Civilization123",
       "Location": "Space Centre USA",
-      "StartTime": "2019-01-06T08:30:00.000Z",
-      "EndTime": "2019-01-06T10:30:00.000Z",
+      "StartTime": "2019-01-10T16:6:06.000Z",
+      "EndTime": "2019-01-10T01:30:00.000Z",
       "CategoryColor": "#ea7a57"
     },
     {
